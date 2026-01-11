@@ -4,7 +4,7 @@
 
 A modern, offline-first travel companion that helps you explore cities, save memories, and find essential places even without internet connection.
 
-[![Live Demo](https://img.shields.io/badge/demo-live-success)](https://atakankap.github.io/trippocket-pwa/)
+[![Live Demo](https://img.shields.io/badge/demo-live-success)](https://trippocket.netlify.app/)
 [![PWA](https://img.shields.io/badge/PWA-enabled-blue)](https://web.dev/progressive-web-apps/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
@@ -40,7 +40,7 @@ A modern, offline-first travel companion that helps you explore cities, save mem
 
 ## 🚀 Live Demo
 
-**Visit:** [https://atakankap.github.io/trippocket-pwa/](https://atakankap.github.io/trippocket-pwa/)
+**Visit:** [https://trippocket.netlify.app/](https://trippocket.netlify.app/)
 
 **Try it:**
 1. Open the link on mobile or desktop

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TripPocket Icon Generator</title>
+</head>
+<body>
+    <h1>Generating Icons...</h1>
+    <div id="status"></div>
+    <script>
+        const sizes = [72, 96, 128, 144, 152, 192, 384, 512];
+        const statusDiv = document.getElementById('status');
+        
+        async function generateIcons() {
+            for (const size of sizes) {
+                const canvas = document.createElement('canvas');
+                canvas.width = size;
+                canvas.height = size;
+                const ctx = canvas.getContext('2d');
+                
+                // Gradient background
+                const gradient = ctx.createLinearGradient(0, 0, size, size);
+                gradient.addColorStop(0, '#2563eb');
+                gradient.addColorStop(1, '#1e40af');
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, size, size);
+                
+                // White circle background
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
+                ctx.beginPath();
+                ctx.arc(size/2, size/2, size/3, 0, Math.PI * 2);
+                ctx.fill();
+                
+                // Emoji
+                ctx.font = `bold ${size * 0.5}px Arial`;
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillStyle = 'white';
+                ctx.fillText('🎒', size / 2, size / 2);
+                
+                // Convert to blob and download
+                await new Promise((resolve) => {
+                    canvas.toBlob((blob) => {
+                        const url = URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = `icon-${size}x${size}.png`;
+                        a.click();
+                        URL.revokeObjectURL(url);
+                        
+                        statusDiv.innerHTML += `<p>✓ Generated icon-${size}x${size}.png</p>`;
+                        resolve();
+                    }, 'image/png');
+                });
+                
+                await new Promise(resolve => setTimeout(resolve, 500));
+            }
+            
+            statusDiv.innerHTML += '<h2 style="color: green;">✓ All icons generated!</h2>';
+            statusDiv.innerHTML += '<p>Move all downloaded PNG files to the icons/ folder</p>';
+        }
+        
+        generateIcons();
+    </script>
+</body>
+</html>

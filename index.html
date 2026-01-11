@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TripPocket - Your offline-first travel companion">
+    <meta name="theme-color" content="#2563eb">
+    <title>TripPocket - Travel Guide</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/views.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/reviews.css">
+    <link rel="stylesheet" href="css/online.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/leaflet-custom.css">
+    <link rel="icon" type="image/png" href="icons/logo.png">
+</head>
+<body>
+    <div id="app">
+        <header class="app-header">
+            <div class="header-content">
+                <h1 class="app-title">
+                    <img src="icons/logo.png" alt="TripPocket" class="app-logo"> TripPocket
+                </h1>
+                <div class="header-actions">
+                    <button id="headerInstallBtn" class="btn-install" title="Install App">
+                        📱 Install
+                    </button>
+                    <div class="connection-status" id="connectionStatus">
+                        <span class="status-indicator"></span>
+                        <span class="status-text">Online</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main id="mainContent" class="main-content">
+            <!-- Views will be dynamically loaded here -->
+        </main>
+
+        <nav class="bottom-nav">
+            <button class="nav-item active" data-view="explore">
+                <span class="nav-icon">🗺️</span>
+                <span class="nav-label">Explore</span>
+            </button>
+            <button class="nav-item" data-view="map">
+                <span class="nav-icon">📍</span>
+                <span class="nav-label">Map</span>
+            </button>
+            <button class="nav-item" data-view="saved">
+                <span class="nav-icon">💼</span>
+                <span class="nav-label">Saved</span>
+            </button>
+            <button class="nav-item" data-view="profile">
+                <span class="nav-icon">👤</span>
+                <span class="nav-label">Profile</span>
+            </button>
+        </nav>
+    </div>
+
+    <div id="installPrompt" class="install-prompt hidden">
+        <div class="install-content">
+            <p>📱 Install TripPocket for offline access!</p>
+            <button id="installButton" class="btn-primary">Install</button>
+            <button id="dismissInstall" class="btn-text">Not now</button>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay hidden">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <div class="loading-text">Loading...</div>
+            <div class="loading-subtext">Please wait</div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/utils/toast.js"></script>
+    <script src="js/utils/loading.js"></script>
+    <script src="js/utils/reviews.js" type="module"></script>
+    <script src="js/app.js" type="module"></script>
+</body>
+</html>

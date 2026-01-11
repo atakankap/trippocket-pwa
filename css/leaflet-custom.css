@@ -1,0 +1,141 @@
+.custom-marker {
+  background: transparent;
+  border: none;
+}
+
+.marker-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.marker-icon-leaflet {
+  font-size: 2.5rem;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.3));
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.custom-marker:hover .marker-icon-leaflet {
+  transform: scale(1.2);
+}
+
+.user-marker-leaflet {
+  background: transparent;
+  border: none;
+}
+
+.user-marker-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-marker-icon {
+  font-size: 3rem;
+  filter: drop-shadow(0 4px 8px rgba(37, 99, 235, 0.5));
+  animation: bounce 2s infinite;
+}
+
+.user-marker-label {
+  background: rgba(37, 99, 235, 0.95);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-top: 0.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.leaflet-popup-content-custom {
+  padding: 0.5rem;
+  min-width: 200px;
+}
+
+.leaflet-popup-content-custom h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.125rem;
+  color: var(--text-primary);
+}
+
+.popup-type {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin: 0.25rem 0;
+}
+
+.popup-desc {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin: 0.5rem 0;
+  line-height: 1.4;
+}
+
+.popup-address {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  margin: 0.5rem 0 0 0;
+  font-style: italic;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.leaflet-popup-tip {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.leaflet-control-zoom {
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+.leaflet-control-zoom a {
+  border-radius: 8px !important;
+  font-size: 18px !important;
+  line-height: 32px !important;
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.leaflet-control-zoom a:first-child {
+  border-top-left-radius: 8px !important;
+  border-top-right-radius: 8px !important;
+}
+
+.leaflet-control-zoom a:last-child {
+  border-bottom-left-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+}
+
+.leaflet-bar {
+  border-radius: 8px !important;
+}
+
+@media (max-width: 768px) {
+  .leaflet-map-container {
+    height: 400px;
+  }
+  
+  .marker-icon-leaflet {
+    font-size: 2rem;
+  }
+  
+  .user-marker-icon {
+    font-size: 2.5rem;
+  }
+}

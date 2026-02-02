@@ -1,117 +1,22 @@
-# TripPocket PWA  
-Progressive Web App for Travelers
+TripPocket PWA is a Progressive Web Application developed as a course project. The application allows users to explore places, view maps, save memories, and access essential locations both online and offline. Live demo of the application is available at https://trippocket.netlify.app
+. The purpose of this project is to demonstrate core Progressive Web App concepts such as installability, offline functionality, usage of native browser APIs, and Service Worker–based caching. The project is implemented using Vanilla JavaScript without frameworks for the PWA layer, as required by the course.
 
-TripPocket is a Progressive Web Application developed as a course project.  
-The application allows users to explore places, view maps, save memories, and access essential locations both online and offline.
+The application supports both online and offline modes. In online mode, users can search and explore places, use an interactive map view, save favorite locations, and capture photos using the device camera. In offline mode, users can access predefined essential locations such as hospitals, police stations, and metro stations, view previously saved photos and data, and use basic navigation without an internet connection.
 
-Live demo of the application:
-https://trippocket.netlify.app
+TripPocket is installable on mobile and desktop devices, follows an offline-first approach, uses a Service Worker for caching, is deployed over HTTPS, and is fully responsive. Native browser APIs used in the project include the Geolocation API to obtain the user’s current location and the MediaDevices API to capture photos using the device camera.
 
-## Project Overview
+The technologies used in this project include HTML5, CSS3, and Vanilla JavaScript with ES6 modules. For the user interface only, Leaflet.js is used for interactive maps together with OpenStreetMap tiles and the Nominatim API for geocoding. The PWA stack consists of a Service Worker, Cache API, IndexedDB for saved locations, and localStorage for settings and photos.
 
-The purpose of this project is to demonstrate core Progressive Web App concepts such as installability, offline functionality, usage of native browser APIs, and Service Worker–based caching.
+The project structure includes index.html as the main entry point, manifest.json for PWA configuration, service-worker.js for offline functionality, separate folders for CSS and JavaScript files, and an icons folder containing the required PWA icons.
 
-The project is implemented using **Vanilla JavaScript** without frameworks for the PWA layer, as required by the course.
+For local development, the repository can be cloned from GitHub and served using any local HTTP server, for example by running a simple Python HTTP server and opening the application in a browser at http://localhost:8000
+.
 
-## Features
+Testing includes switching the browser to offline mode via DevTools to verify offline functionality and installing the application via “Add to Home Screen” or “Install” to verify PWA installation behavior.
 
-### Online Mode
-- Search and explore places
-- Interactive map view
-- Save favorite locations
-- Capture photos using the device camera
+All application data is stored locally on the user’s device. There is no server-side storage, no tracking, and no analytics. Users have full control over their data.
 
-### Offline Mode
-- Access predefined essential locations (e.g. hospitals, police stations, metro)
-- View previously saved photos and data
-- Basic navigation without an internet connection
-
-## PWA Capabilities
-
-- Installable on mobile and desktop devices
-- Offline-first behavior
-- Service Worker for caching
-- HTTPS deployment
-- Responsive design
-
-## Native Browser APIs
-
-- **Geolocation API** – used to obtain the user’s current location
-- **MediaDevices API (Camera)** – used to capture photos
-
-## Technologies Used
-
-- HTML5
-- CSS3
-- Vanilla JavaScript (ES6 Modules)
-
-### Libraries (UI only)
-- Leaflet.js
-- OpenStreetMap
-- Nominatim API
-
-### PWA Stack
-- Service Worker
-- Cache API
-- IndexedDB (saved locations)
-- localStorage (settings and photos)
-
-## Project Structure
-
-trippocket-pwa/
-├── index.html
-├── manifest.json
-├── service-worker.js
-├── css/
-├── js/
-│ ├── views/
-│ ├── utils/
-│ └── data/
-└── icons/
----
-
-## Installation (Local Development)
-
-Clone the repository and serve it using any local HTTP server:
-
-git clone https://github.com/atakankap/trippocket-pwa.git
-cd trippocket-pwa
-python -m http.server 8000
-
-arduino
-Kodu kopyala
-
-Then open:
-http://localhost:8000
-
-yaml
-Kodu kopyala
-
----
-
-## Testing
-
-### Offline Test
-- Open browser DevTools
-- Network tab → set to Offline
-- Refresh the page
-- The application should still load and provide limited functionality
-
-### PWA Installation Test
-- Open the application in a supported browser
-- Click “Install” or “Add to Home Screen”
-- Launch the app as a standalone application
-
----
-
-## Data & Privacy
-
-- All data is stored locally on the user’s device
-- No server-side storage
-- No tracking or analytics
-- Users have full control over their data
-
----
+Author: Alaeddin Atakan Kaplan – 39487.
 
 ## Author
 
